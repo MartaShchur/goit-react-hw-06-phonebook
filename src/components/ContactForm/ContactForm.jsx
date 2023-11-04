@@ -6,7 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getVisibleContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
 
-
 const nameInputId = nanoid();
 const numberInputId = nanoid();
 

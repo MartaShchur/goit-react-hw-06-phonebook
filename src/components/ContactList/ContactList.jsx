@@ -6,7 +6,7 @@ import { getVisibleContacts } from 'redux/selectors';
 import { removeContact } from 'redux/contactsSlice';
 
 
-const ContactList = () => {
+export const ContactList = () => {
   const contacts = useSelector(getVisibleContacts);
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(removeContact());
@@ -20,7 +20,7 @@ const ContactList = () => {
             <Button
               type="button"
               name="delete"
-              onClick={{handleDelete}}
+              onClick={handleDelete}
             >
               delete
             </Button>
@@ -31,8 +31,5 @@ const ContactList = () => {
     
   );
 };
-
-
-
 
 export default ContactList;
