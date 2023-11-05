@@ -8,7 +8,7 @@ export const List = styled.ul`
   padding: 12px;
   border-radius: 4px;
   background-color: rgba(0, 0, 0, 0.6);
- 
+
   list-style: none;
 `;
 
@@ -28,5 +28,6 @@ export const Button = styled.button`
   font: inherit;
   cursor: pointer;
   border-radius: 4px 8px;
- 
+  display: flex;
+  align-items: center;
 `;

@@ -1,6 +1,5 @@
 import { getContacts } from 'redux/selectors';
 import { useSelector } from 'react-redux';
-// import { saveLocalStorage, loadLocalStorage } from './localStorage';
 
 import { Container, Title, SubTitle, Wrapper } from './App.styled';
 import ContactForm from './ContactForm/ContactForm';
@@ -28,6 +27,8 @@ export const App = () => {
 };
 
 export default App;
+
+
 
 
 
