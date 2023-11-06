@@ -10,11 +10,15 @@ const ContactList = () => {
   const filter = useSelector(getFilter);
   const dispatch = useDispatch();
   const handleDelete = () => dispatch(removeContact());
+  
+  const visibleContacts = [
+    ...contacts.filter(contact => contact.name.toLowerCase().includes(filter)),
+  ]; 
+
   return (
     <List>
-      {contacts.map(contact => (
-        <Item key={contact.id}>
-          {contact.name + ' : ' + contact.number}
+      {visibleContacts.map(({ name, number, id }) => (
+        <Item key={id} id={id} name={name} number={number}>
           {
             <Button type="button" name="delete" onClick={handleDelete}>
               delete
