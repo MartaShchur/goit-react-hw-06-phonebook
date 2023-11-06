@@ -10,12 +10,12 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
-  const handleSubmit = evt => {
-    evt.preventDefault();
+  const handleSubmit = event => {
+    event.preventDefault();
 
-    const form = evt.target;
-    const formName = evt.target.elements.name.value;
-    const formNumber = evt.target.elements.number.value;
+    const form = event.target;
+    const formName = event.target.elements.name.value;
+    const formNumber = event.target.elements.number.value;
 
     if (contacts.some(({ name }) => name === formName)) {
       return alert(`${formName} is already in contacts`);
