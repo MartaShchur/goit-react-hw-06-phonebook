@@ -12,11 +12,11 @@ import {
 import storage from 'redux-persist/lib/storage';
 
 import { contactsReducer } from './contactsSlice';
-import { filterReducer } from './filterSlice';
+import { filtersReducer } from './filterSlice';
 
 const rootReducer = combineReducers({
   contacts: contactsReducer,
-  filters: filterReducer,
+  filters: filtersReducer,
 });
 
 const persistConfig = {

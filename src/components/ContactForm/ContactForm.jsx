@@ -10,20 +10,15 @@ export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
 
-  const handleSubmit = event => {
-    event.preventDefault();
+  const handleSubmit = evt => {
+    evt.preventDefault();
 
-    const form = event.target;
-    const formName = event.target.elements.name.value;
-    const formNumber = event.target.elements.number.value;
+    const form = evt.target;
+    const formName = evt.target.elements.name.value;
+    const formNumber = evt.target.elements.number.value;
 
-    const isInContacts = contacts.some(
-      contact => contact.name.toLowerCase().trim() === formName.toLowerCase().trim()
-    );
-
-    if (isInContacts) {
-      alert(`${formName} is already in contacts`);
-      return;
+    if (contacts.some(({ name }) => name === formName)) {
+      return alert(`${formName} is already in contacts`);
     }
 
     dispatch(addContact(formName, formNumber));
@@ -38,7 +33,7 @@ export const ContactForm = () => {
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces."
+          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
           required
           placeholder="Enter name"
           value={contacts.name}

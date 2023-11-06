@@ -1,17 +1,14 @@
-import styled from 'styled-components';
-
-export const Div = styled.div`
-  margin-bottom: 15px;
-`;
+import styled from '@emotion/styled';
 
 export const Label = styled.label`
-  color: #000;
-  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 16px;
+  font-weight: 500;
 `;
-
 export const Input = styled.input`
-  width: 400px;
-  padding: 10px;
-  margin: 0 auto;
-  border-radius: 4px;
+  width: 250px;
+  padding: 5px;
+  border-radius: 5px;
 `;
