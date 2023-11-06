@@ -1,14 +1,11 @@
-import { useState } from 'react';
-import { nanoid } from '@reduxjs/toolkit';
+// import { useState } from 'react';
+// import { nanoid } from '@reduxjs/toolkit';
 import { Form, Label, Button, Input } from './ContactForm.styled';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
 
-
-const nameInputId = nanoid();
-const numberInputId = nanoid();
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
@@ -29,21 +26,7 @@ export const ContactForm = () => {
     form.reset();
   };
 
-  // const handleChange = event => {
-  //   const { name, value } = event.target;
-
-  //   switch (name) {
-  //     case 'name':
-  //       setName(value);
-  //       break;
-  //     case 'number':
-  //       setNumber(value);
-  //       break;
-  //     default:
-  //       return;
-  //   };
-
-   return (
+  return (
     <Form onSubmit={handleSubmit} autoComplete="off">
       <Label>
         Name
@@ -51,7 +34,7 @@ export const ContactForm = () => {
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Name may contain only letters, apostrophe, dash and spaces."
           required
           placeholder="Enter name"
           value={contacts.name}
@@ -71,8 +54,8 @@ export const ContactForm = () => {
       </Label>
       <Button type="submit">Add contact</Button>
     </Form>
-    );
-    
+  );
 };
 
 export default ContactForm;
+
