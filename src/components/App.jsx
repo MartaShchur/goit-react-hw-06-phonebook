@@ -8,6 +8,7 @@ import Filter from './Filter/Filter';
 
 export const App = () => {
   const contacts = useSelector(getContacts);
+  // console.log(getContacts);
 
   return (
     <Container>
