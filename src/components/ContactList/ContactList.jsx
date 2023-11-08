@@ -6,13 +6,16 @@ import { ContactsList } from './ContactList.styled';
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
+
   const visibleContacts = [
      ...contacts.filter(contact => contact.name.toLowerCase().includes(filter)),
   ];
 
+  // const visibleContacts = [];
+
   return (
     <ContactsList>
-      {visibleContacts.map(({ name, number, id }) => (
+      {contacts.map(({ name, number, id }) => (
         <ContactsListItem key={id} id={id} name={name} number={number} />
       ))}
     </ContactsList>

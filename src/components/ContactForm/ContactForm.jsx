@@ -9,6 +9,7 @@ import { Form, Label, Button, Input } from './ContactForm.styled';
 export const ContactForm = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(getContacts);
+  // console.log(contacts);
 
   const handleSubmit = event => {
     event.preventDefault();
@@ -26,17 +27,18 @@ export const ContactForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit} autoComplete="off">
+    <Form onSubmit={handleSubmit} autoComplete="off" >
       <Label>
         Name
         <Input
           type="text"
           name="name"
           pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+          title="Name may contain only letters, apostrophe, dash and spaces."
           required
           placeholder="Enter name"
-          value={contacts.name}
+          // value={contacts.name.items}
+          
         />
       </Label>
       <Label>
@@ -48,7 +50,7 @@ export const ContactForm = () => {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
           placeholder="Enter number"
-          value={contacts.number}
+          // value={contacts.number.items}
         />
       </Label>
       <Button type="submit">Add contact</Button>
