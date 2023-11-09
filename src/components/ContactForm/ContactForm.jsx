@@ -2,13 +2,13 @@
 // import { nanoid } from '@reduxjs/toolkit';
 
 import { useSelector, useDispatch } from 'react-redux';
-import { getContacts } from 'redux/selectors';
+import { getVisibleContacts } from 'redux/selectors';
 import { addContact } from 'redux/contactsSlice';
 import { Form, Label, Button, Input } from './ContactForm.styled';
 
 export const ContactForm = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContacts);
+  const {contacts} = useSelector(getVisibleContacts);
   // console.log(contacts);
 
   const handleSubmit = event => {
