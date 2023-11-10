@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contactsSlice';
 import {
   ContactItem,
@@ -25,8 +25,8 @@ export const ContactsListItem = ({ contact }) => {
   );
 }
 
-ContactItem.propTypes = {
-  contact: PropTypes.object.isRequired,
-};
+// ContactItem.propTypes = {
+//   contact: PropTypes.object.isRequired,
+// };
 
 export default ContactItem;
