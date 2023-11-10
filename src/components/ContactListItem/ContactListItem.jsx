@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import PropTypes from 'prop-types';
 import { deleteContact } from 'redux/contactsSlice';
 import {
   ContactItem,
@@ -7,19 +8,25 @@ import {
   Button,
 } from './ContactListItem.styled';
 
-export const ContactsListItem = ({ id, name, number }) => {
+export const ContactsListItem = ({ contact }) => {
   const dispatch = useDispatch();
 
-  const handleDeleteContact = evt => {
-    dispatch(deleteContact(evt.target.id));
+  const handleDeleteContact = () => {
+    dispatch(deleteContact(contact.id));
   };
 
   return (
     <ContactItem>
       <ContactName>
-        {name}:<ContactNumber>{number}</ContactNumber>
+        {contact.name}:<ContactNumber>{contact.number}</ContactNumber>
       </ContactName>
-      <Button id={id} type="button" onClick={handleDeleteContact}>Delete</Button>
+      <Button onClick={handleDeleteContact}>Delete</Button>
     </ContactItem>
   );
+}
+
+ContactItem.propTypes = {
+  contact: PropTypes.object.isRequired,
 };
+
+export default ContactItem;
